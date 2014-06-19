@@ -27,12 +27,13 @@
       var html = '<div class="piechart-outer"><ul>' +
                  '<li class="piechart-item piechart-overhalf">' +
                  '<span class="piechart-filled"></span></li>';
-      for (var i = 0; i <= this.items.length; i++) {
+      for (var i = 0; i < this.items.length; i++) {
         html += '<li class="piechart-item piechart-' + this.items[i] + '">' + 
                 '<span class="piechart-filled"></span></li>';
       }
       html += '</ul></div><div class="piechart-inner"></div>';
       $(container).html(html);
+      $(container).find('.piechart-outer').css('background', this.colors.pop());
       if (outter) {
         $(container).width(outter).height(outter);
         $(container).find('.piechart-outer').width(outter).height(outter);
@@ -90,29 +91,7 @@
         }
         taken += this.datas[i];
       }
-      console.log(taken);
     }
   }
-
-  var p = new Piechart({
-    photos: 0.45,
-    musics: 0.45,
-    apps: 0.05,
-    videoes: 0.05
-  });
-  p.draw('#piechart', 300, 100, ['#28aee8', '#fa2e56', '#5855af', '#fddc41', '#3a3f42']);
-
-  var p1 = new Piechart({
-    test0: 0.45,
-    test1: 0.45
-  });
-  p1.draw('#piechart1', 500, 200, ['#f00', '#0f0', '#3a3f42']);
-
-  var p3 = new Piechart({
-    test9: 0.3,
-    test8: 0.1,
-    test7: 0.5
-  });
-  p3.draw('#piechart2', 400, 0, ['#ff0', '#0ff', '#f0f', '#3a3f42']);
 
 })();

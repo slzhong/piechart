@@ -4,12 +4,25 @@
   <meta charset="UTF-8">
   <title>Piechart</title>
   <link rel="stylesheet" href="piechart.css">
+  <script src="jquery-1.11.1.min.js"></script>
+  <script src="piechart.js"></script>
 </head>
 <body>
+
   <div id="piechart"></div>
   <div id="piechart1"></div>
   <div id="piechart2"></div>
-  <script src="jquery-1.11.1.min.js"></script>
-  <script src="piechart.js"></script>
+
+  <script>
+  var p = new Piechart({
+    photos: 0.6,
+    musics: 0.1,
+    apps: 0.1,
+    videoes: 0.1
+  });
+  p.draw('#piechart', 300, 150, ['#28aee8', '#fa2e56', '#5855af', '#fddc41', '#3a3f42']);
+
+  </script>
+
 </body>
 </html>
