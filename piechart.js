@@ -58,6 +58,12 @@
       if (args) {
         this.init(args);
       }
+      $(this.container).find('.piechart-overhalf').css({
+        '-webkit-transform' : 'rotate(0deg)',
+        '-moz-transform' : 'rotate(0deg)',
+        '-o-transform' : 'rotate(0deg)',
+        'transform' : 'rotate(0deg)'
+      }).hide();
       var taken = 0;
       var overhalf = false;
       for (var i = 0; i < this.datas.length; i++) {
